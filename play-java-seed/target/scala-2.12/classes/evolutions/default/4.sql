@@ -1,6 +1,6 @@
 # --- !Ups
 
-update product set category_id = 1 where category_id is null;
+update employee set id = 1 where id is null;
 
 # --- !Ups
 delete from user;

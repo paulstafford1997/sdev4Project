@@ -9,7 +9,6 @@ create table address (
   street                        varchar(255),
   town                          varchar(255),
   province                      varchar(255),
-  city                          varchar(255),
   postcode                      varchar(255),
   constraint uq_address_id unique (id),
   constraint pk_address primary key (id)

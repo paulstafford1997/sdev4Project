@@ -40,22 +40,19 @@ Seq[Any](format.raw/*1.78*/("""
     """),format.raw/*8.33*/("""
     """),_display_(/*9.6*/CSRF/*9.10*/.formField),format.raw/*9.20*/("""
     """),_display_(/*10.6*/inputText(updateProjectForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*10.87*/("""
-    """),_display_(/*11.6*/inputText(updateProjectForm("noOfMembers"), '_label -> "No. Of Members", 'class -> "form-control")),format.raw/*11.104*/("""
-    """),_display_(/*12.6*/select(updateProjectForm("employee.id"),options(Employee.options),'_label -> "Employee", '_default -> "-- Choose an employee --", '_showConstraints -> false, 'class -> "form-control")),format.raw/*12.189*/("""     
-
-    """),_display_(/*14.6*/inputText(updateProjectForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*14.89*/("""
+    """),_display_(/*11.6*/select(updateProjectForm("employee.id"),options(Employee.options),'_label -> "Employee", '_default -> "-- Choose an employee --", '_showConstraints -> false, 'class -> "form-control")),format.raw/*11.189*/("""     
     
-    """),format.raw/*16.5*/("""<label>Image </label>
+    """),format.raw/*13.5*/("""<label>Image </label>
     <input class = "btn-sm btn-default" type="file" name="upload">
     <br><br>
 
     <div class="actions">
         <input type="submit" value="Update Project" class="btn btn-primary">
-        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.index(0)),format.raw/*22.49*/("""">
+        <a href=""""),_display_(/*19.19*/routes/*19.25*/.HomeController.index(0)),format.raw/*19.49*/("""">
             <button type="button" class="btn btn-warning">Cancel</button>
         </a>
     </div>
- """)))}),format.raw/*26.3*/("""
+ """)))}),format.raw/*23.3*/("""
 """)))}))
       }
     }
@@ -72,11 +69,11 @@ Seq[Any](format.raw/*1.78*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 11 13:28:51 GMT 2018
+                  DATE: Sun Mar 11 21:47:05 GMT 2018
                   SOURCE: /home/paul/sdev4Project/sdev4Project/play-java-seed/app/views/updateProject.scala.html
-                  HASH: 063ac5cb5fff4899881d8fe1b449f34ffe9183d7
-                  MATRIX: 993->1|1142->79|1187->77|1214->96|1250->124|1288->125|1315->126|1378->164|1525->303|1564->305|1596->338|1627->344|1639->348|1669->358|1701->364|1803->445|1835->451|1955->549|1987->555|2192->738|2230->750|2334->833|2371->843|2622->1067|2637->1073|2682->1097|2815->1200
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|38->6|39->7|39->7|40->8|41->9|41->9|41->9|42->10|42->10|43->11|43->11|44->12|44->12|46->14|46->14|48->16|54->22|54->22|54->22|58->26
+                  HASH: 23821f236977cc317a2ca4c1ad3996e9c79c265b
+                  MATRIX: 993->1|1142->79|1187->77|1214->96|1250->124|1288->125|1315->126|1378->164|1525->303|1564->305|1596->338|1627->344|1639->348|1669->358|1701->364|1803->445|1835->451|2040->634|2082->649|2333->873|2348->879|2393->903|2526->1006
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|38->6|39->7|39->7|40->8|41->9|41->9|41->9|42->10|42->10|43->11|43->11|45->13|51->19|51->19|51->19|55->23
                   -- GENERATED --
               */
           

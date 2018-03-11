@@ -1,0 +1,24 @@
+@(id: Long, updateDepartmentForm: Form[models.Department], user: models.users.User)
+@import helper._
+@main("Update department", user){
+<p class="lead"> Update Department</p>
+
+@form(action=routes.HomeController.updateDepartmentSubmit(id), 'class -> "form-horizontal", 
+'role -> "form",'enctype -> "multipart/form-data") {
+    @* CSRF attack prevention *@
+    @CSRF.formField
+    @inputText(updateDepartmentForm("name"), '_label -> "Name", 'class -> "form-control")
+
+    
+    <label>Image </label>
+    <input class = "btn-sm btn-default" type="file" name="upload">
+    <br><br>
+
+    <div class="actions">
+        <input type="submit" value="Update Department" class="btn btn-primary">
+        <a href="@routes.HomeController.index(0)">
+            <button type="button" class="btn btn-warning">Cancel</button>
+        </a>
+    </div>
+ }
+}

@@ -8,10 +8,7 @@
     @* CSRF attack prevention *@
     @CSRF.formField
     @inputText(updateProjectForm("name"), '_label -> "Name", 'class -> "form-control")
-    @inputText(updateProjectForm("noOfMembers"), '_label -> "No. Of Members", 'class -> "form-control")
     @select(updateProjectForm("employee.id"),options(Employee.options),'_label -> "Employee", '_default -> "-- Choose an employee --", '_showConstraints -> false, 'class -> "form-control")     
-
-    @inputText(updateProjectForm("stock"), '_label -> "Stock", 'class -> "form-control")
     
     <label>Image </label>
     <input class = "btn-sm btn-default" type="file" name="upload">

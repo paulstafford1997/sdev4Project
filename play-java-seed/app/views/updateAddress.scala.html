@@ -1,0 +1,27 @@
+@(id: Long, updateAddressForm: Form[models.Address], user: models.users.User)
+@import helper._
+@main("Update address", user){
+<p class="lead"> Update Address</p>
+
+@form(action=routes.HomeController.updateAddressSubmit(id), 'class -> "form-horizontal", 
+'role -> "form",'enctype -> "multipart/form-data") {
+    @* CSRF attack prevention *@
+    @CSRF.formField
+    @inputText(updateAddressForm("houseNum"), '_label -> "House/Apartment Number", 'class -> "form-control")
+    @inputText(updateAddressForm("street"), '_label -> "House/Apartment Number", 'class -> "form-control")
+    @inputText(updateAddressForm("town"), '_label -> "House/Apartment Number", 'class -> "form-control")
+    @inputText(updateAddressForm("province"), '_label -> "House/Apartment Number", 'class -> "form-control")
+    @inputText(updateAddressForm("postcode"), '_label -> "House/Apartment Number", 'class -> "form-control")
+
+    <label>Image </label>
+    <input class = "btn-sm btn-default" type="file" name="upload">
+    <br><br>
+
+    <div class="actions">
+        <input type="submit" value="Update Address" class="btn btn-primary">
+        <a href="@routes.HomeController.index(0)">
+            <button type="button" class="btn btn-warning">Cancel</button>
+        </a>
+    </div>
+ }
+}

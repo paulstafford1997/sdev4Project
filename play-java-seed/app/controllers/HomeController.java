@@ -130,6 +130,46 @@ public class HomeController extends Controller {
             return redirect(controllers.routes.HomeController.address());
         }
     }
+
+    public Result department() {
+        List<Department> departmentList = Department.findAll();
+        return ok(department.render(departmentList,User.getUserById(session().get("email"))));
+    }
+
+    @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
+    @Transactional
+    public Result addDepartment() {
+        Form<Department> departmentForm = formFactory.form(Department.class);
+        return ok(addDepartment.render(departmentForm,User.getUserById(session().get("email"))));
+    }
+
+    public Result addDepartmentSubmit() {
+        Form<Department> newDepartmentForm = formFactory.form(Department.class).bindFromRequest();
+        
+
+        if (newDepartmentForm.hasErrors()) {
+            return badRequest(addDepartment.render(newDepartmentForm,User.getUserById(session().get("email"))));
+            
+        } 
+        else {
+            Department newDepartment = newDepartmentForm.get();
+            
+            if (newDepartment.getId() == null) {
+                newDepartment.save();
+                flash("success", "Department " + newDepartment.getName() + "was added");                
+            }
+
+            else {
+                newDepartment.update();
+                flash("success", "Department " + newDepartment.getName() +  "was updated");                
+            }
+
+
+
+            return redirect(controllers.routes.HomeController.department());
+        }
+    }
     @Security.Authenticated(Secured.class)
     @With(AuthAdmin.class)
     @Transactional
@@ -144,6 +184,13 @@ public class HomeController extends Controller {
     public Result deleteAddress(Long id) {
         Address.find.ref(id).delete();
         flash("success", "Address has been deleted");
+
+        return redirect(routes.HomeController.index(0));
+    }
+
+    public Result deleteDepartment(Long id) {
+        Department.find.ref(id).delete();
+        flash("success", "Department has been deleted");
 
         return redirect(routes.HomeController.index(0));
     }
@@ -164,6 +211,7 @@ public class HomeController extends Controller {
         }
         return ok(updateProject.render(id, projectForm, User.getUserById(session().get("email"))));
     }
+
     @Transactional
     public Result updateAddress(Long id) {        
         Address ad;
@@ -178,6 +226,22 @@ public class HomeController extends Controller {
         }
 
         return ok(addAddress.render(addressForm,User.getUserById(session().get("email"))));
+    }
+
+    @Transactional
+    public Result updateDepartment(Long id) {        
+        Department dep;
+        Form<Department> departmentForm;
+
+        try {
+            dep = Department.find.byId(id);
+            departmentForm = formFactory.form(Department.class).fill(dep);
+        }
+        catch (Exception ex) {
+            return badRequest("error");
+        }
+
+        return ok(addDepartment.render(departmentForm,User.getUserById(session().get("email"))));
     }
     public String saveFile(Long id, FilePart<File> uploaded) {
         // make sure that the file exists
@@ -276,24 +340,89 @@ public class HomeController extends Controller {
             Project p = updateProjectForm.get();
             p.setId(id);
             
-            
             //update (save) this product
             p.update();
-
-            MultipartFormData data = request().body().asMultipartFormData();
-            FilePart<File> image = data.getFile("upload");
-
-            String saveImageMsg = saveFile(p.getId(), image);
-
-            if(saveImageMsg.equals("/ no file")){
-                flash("success", "Project " + p.getName() + " has been updated");
-            } else{
-                flash("success", "Project " + p.getName() + " has been  updated " + saveImageMsg);
-            }
 
             // Redirect to the index page
             return redirect(controllers.routes.HomeController.index(0));
         }
     }
 
+    public Result updateAddressSubmit(Long id) {
+        
+        // Retrieve the submitted form object (bind from the HTTP request)
+        Form<Address> updateAddressForm = formFactory.form(Address.class).bindFromRequest();
+
+        // Check for errors (based on constraints set in the Project class)
+        if (updateAddressForm.hasErrors()) {
+            // Display the form again by returning a bad request
+            return badRequest(updateAddress.render(id,updateAddressForm, User.getUserById(session().get("email"))));
+        } else {
+        
+            Address ad = updateAddressForm.get();
+            ad.setId(id);
+            
+            ad.update();
+
+            // Redirect to the index page
+            return redirect(controllers.routes.HomeController.index(0));
+        }
+    }
+
+    public Result updateDepartmentSubmit(Long id) {
+        
+        // Retrieve the submitted form object (bind from the HTTP request)
+        Form<Department> updateDepartmentForm = formFactory.form(Department.class).bindFromRequest();
+
+        // Check for errors (based on constraints set in the Project class)
+        if (updateDepartmentForm.hasErrors()) {
+            // Display the form again by returning a bad request
+            return badRequest(updateDepartment.render(id,updateDepartmentForm, User.getUserById(session().get("email"))));
+        } else {
+            // No errors found - extract the project detail from the form
+            Department dep = updateDepartmentForm.get();
+            dep.setId(id);
+            
+            
+            //update (save) this product
+            dep.update();
+
+            // Redirect to the index page
+            return redirect(controllers.routes.HomeController.index(0));
+        }
+    }
+
+    // public Result updateProjectSubmit(Long id) {
+        
+    //     // Retrieve the submitted form object (bind from the HTTP request)
+    //     Form<Project> updateProjectForm = formFactory.form(Project.class).bindFromRequest();
+
+    //     // Check for errors (based on constraints set in the Project class)
+    //     if (updateProjectForm.hasErrors()) {
+    //         // Display the form again by returning a bad request
+    //         return badRequest(updateProject.render(id,updateProjectForm, User.getUserById(session().get("email"))));
+    //     } else {
+    //         // No errors found - extract the project detail from the form
+    //         Project p = updateProjectForm.get();
+    //         p.setId(id);
+            
+            
+    //         //update (save) this product
+    //         p.update();
+
+    //         MultipartFormData data = request().body().asMultipartFormData();
+    //         FilePart<File> image = data.getFile("upload");
+
+    //         String saveImageMsg = saveFile(p.getId(), image);
+
+    //         if(saveImageMsg.equals("/ no file")){
+    //             flash("success", "Project " + p.getName() + " has been updated");
+    //         } else{
+    //             flash("success", "Project " + p.getName() + " has been  updated " + saveImageMsg);
+    //         }
+
+    //         // Redirect to the index page
+    //         return redirect(controllers.routes.HomeController.index(0));
+    //     }
+    // }
 }

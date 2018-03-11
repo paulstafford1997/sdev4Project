@@ -4,16 +4,23 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index(cat:Long?=0L)
-GET     /address                  controllers.HomeController.address
+GET     /address                    controllers.HomeController.address
+GET     /department                 controllers.HomeController.department
 GET     /addProject                 controllers.HomeController.addProject
 POST    /addProductSubmit           controllers.HomeController.addProjectSubmit
-GET     /addAddress                controllers.HomeController.addAddress
-POST    /addAddressSubmit          controllers.HomeController.addAddressSubmit
+GET     /addAddress                 controllers.HomeController.addAddress
+POST    /addAddressSubmit           controllers.HomeController.addAddressSubmit
+GET     /addDepartment              controllers.HomeController.addDepartment
+POST    /addDepartmentSubmit        controllers.HomeController.addDepartmentSubmit
 GET     /delProject/:id             controllers.HomeController.deleteProject(id: Long)
-GET     /delAddress/:id            controllers.HomeController.deleteAddress(id: Long)
+GET     /delAddress/:id             controllers.HomeController.deleteAddress(id: Long)
+GET     /delDepartment/:id          controllers.HomeController.deleteDepartment(id: Long)
 GET     /updateProject/:id          controllers.HomeController.updateProject(id: Long)
-GET     /updateAddress/:id         controllers.HomeController.updateAddress(id:Long)
+GET     /updateDepartment/:id       controllers.HomeController.updateDepartment(id: Long)
+GET     /updateAddress/:id          controllers.HomeController.updateAddress(id: Long)
 POST    /updateProjectSubmit/:id    controllers.HomeController.updateProjectSubmit(id: Long)
+POST    /updateAddressSubmit/:id    controllers.HomeController.updateAddressSubmit(id: Long)
+POST    /updateDepartmentSubmit/:id controllers.HomeController.updateDepartmentSubmit(id: Long)
 
 GET     /projectDetails/:id         controllers.HomeController.projectDetails(id:Long)
 
