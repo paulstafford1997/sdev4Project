@@ -32,7 +32,7 @@ object address extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 
 Seq[Any](format.raw/*1.58*/("""
 
-"""),_display_(/*3.2*/main("Customers",user)/*3.24*/ {_display_(Seq[Any](format.raw/*3.26*/("""
+"""),_display_(/*3.2*/main("Address",user)/*3.22*/ {_display_(Seq[Any](format.raw/*3.24*/("""
 
 """),format.raw/*5.1*/("""<p class="lead">Addresses</p>
 
@@ -51,40 +51,38 @@ Seq[Any](format.raw/*1.58*/("""
       <th>Street</th>
       <th>Town</th>
       <th>Province</th>
-      <th>City</th>
       <th>Postcode</th>
       <th colspan="2"></th>      
     </tr>
   </thead>
 
   <tbody>
-    """),_display_(/*29.6*/for(a<-address) yield /*29.21*/ {_display_(Seq[Any](format.raw/*29.23*/("""
-      """),format.raw/*30.7*/("""<tr>
-        <td class="numeric">"""),_display_(/*31.30*/a/*31.31*/.getId),format.raw/*31.37*/("""</td>
-        <td>"""),_display_(/*32.14*/a/*32.15*/.getHouseNum),format.raw/*32.27*/("""</td>
-        <td>"""),_display_(/*33.14*/a/*33.15*/.getStreet),format.raw/*33.25*/("""</td>
-        <td>"""),_display_(/*34.14*/a/*34.15*/.getTown),format.raw/*34.23*/("""</td>
-        <td>"""),_display_(/*35.14*/a/*35.15*/.getProvince),format.raw/*35.27*/("""</td>
-        <td>"""),_display_(/*36.14*/a/*36.15*/.getCity),format.raw/*36.23*/("""</td>
-        <td>"""),_display_(/*37.14*/a/*37.15*/.getPostcode),format.raw/*37.27*/("""</td>
+    """),_display_(/*28.6*/for(a<-address) yield /*28.21*/ {_display_(Seq[Any](format.raw/*28.23*/("""
+      """),format.raw/*29.7*/("""<tr>
+        <td class="numeric">"""),_display_(/*30.30*/a/*30.31*/.getId),format.raw/*30.37*/("""</td>
+        <td>"""),_display_(/*31.14*/a/*31.15*/.getHouseNum),format.raw/*31.27*/("""</td>
+        <td>"""),_display_(/*32.14*/a/*32.15*/.getStreet),format.raw/*32.25*/("""</td>
+        <td>"""),_display_(/*33.14*/a/*33.15*/.getTown),format.raw/*33.23*/("""</td>
+        <td>"""),_display_(/*34.14*/a/*34.15*/.getProvince),format.raw/*34.27*/("""</td>
+        <td>"""),_display_(/*35.14*/a/*35.15*/.getPostcode),format.raw/*35.27*/("""</td>
         
         <td>
-          <a href=""""),_display_(/*40.21*/routes/*40.27*/.HomeController.updateAddress(a.getId)),format.raw/*40.65*/("""" class="button-xs btn-danger">
+          <a href=""""),_display_(/*38.21*/routes/*38.27*/.HomeController.updateAddress(a.getId)),format.raw/*38.65*/("""" class="button-xs btn-danger">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
         </td>  
         <td>
-          <a href=""""),_display_(/*45.21*/routes/*45.27*/.HomeController.deleteAddress(a.getId)),format.raw/*45.65*/("""" class="button-xs btn-danger"  onclick="return confirmDel()">
+          <a href=""""),_display_(/*43.21*/routes/*43.27*/.HomeController.deleteAddress(a.getId)),format.raw/*43.65*/("""" class="button-xs btn-danger"  onclick="return confirmDel()">
             <span class="glyphicon glyphicon-trash"></span>
           </a>
         </td>
       </tr>
-    """)))}),format.raw/*50.6*/("""
-  """),format.raw/*51.3*/("""</tbody>
+    """)))}),format.raw/*48.6*/("""
+  """),format.raw/*49.3*/("""</tbody>
 
 </table>
 <p>
-  <a href=""""),_display_(/*55.13*/routes/*55.19*/.HomeController.addAddress()),format.raw/*55.47*/("""">
+  <a href=""""),_display_(/*53.13*/routes/*53.19*/.HomeController.addAddress()),format.raw/*53.47*/("""">
     <button class="btn btn-primary">Add an Address</button>
   </a>
 </p>
@@ -105,11 +103,11 @@ Seq[Any](format.raw/*1.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 11 13:28:51 GMT 2018
+                  DATE: Sun Mar 11 16:08:17 GMT 2018
                   SOURCE: /home/paul/sdev4Project/sdev4Project/play-java-seed/app/views/address.scala.html
-                  HASH: fa6165bb9c23fa9247fac45f673668ab80bc3d25
-                  MATRIX: 982->1|1133->57|1161->60|1191->82|1230->84|1258->86|1315->118|1355->150|1394->152|1423->155|1487->194|1500->199|1535->214|1565->217|1603->225|1632->227|1980->549|2011->564|2051->566|2085->573|2146->607|2156->608|2183->614|2229->633|2239->634|2272->646|2318->665|2328->666|2359->676|2405->695|2415->696|2444->704|2490->723|2500->724|2533->736|2579->755|2589->756|2618->764|2664->783|2674->784|2707->796|2782->844|2797->850|2856->888|3040->1045|3055->1051|3114->1089|3313->1258|3343->1261|3405->1296|3420->1302|3469->1330
-                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|39->7|39->7|39->7|40->8|41->9|41->9|41->9|42->10|43->11|45->13|61->29|61->29|61->29|62->30|63->31|63->31|63->31|64->32|64->32|64->32|65->33|65->33|65->33|66->34|66->34|66->34|67->35|67->35|67->35|68->36|68->36|68->36|69->37|69->37|69->37|72->40|72->40|72->40|77->45|77->45|77->45|82->50|83->51|87->55|87->55|87->55
+                  HASH: 292c4dd811e9f41f8366011c3facbc9ebe0ef79b
+                  MATRIX: 982->1|1133->57|1161->60|1189->80|1228->82|1256->84|1313->116|1353->148|1392->150|1421->153|1485->192|1498->197|1533->212|1563->215|1601->223|1630->225|1958->527|1989->542|2029->544|2063->551|2124->585|2134->586|2161->592|2207->611|2217->612|2250->624|2296->643|2306->644|2337->654|2383->673|2393->674|2422->682|2468->701|2478->702|2511->714|2557->733|2567->734|2600->746|2675->794|2690->800|2749->838|2933->995|2948->1001|3007->1039|3206->1208|3236->1211|3298->1246|3313->1252|3362->1280
+                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|39->7|39->7|39->7|40->8|41->9|41->9|41->9|42->10|43->11|45->13|60->28|60->28|60->28|61->29|62->30|62->30|62->30|63->31|63->31|63->31|64->32|64->32|64->32|65->33|65->33|65->33|66->34|66->34|66->34|67->35|67->35|67->35|70->38|70->38|70->38|75->43|75->43|75->43|80->48|81->49|85->53|85->53|85->53
                   -- GENERATED --
               */
           

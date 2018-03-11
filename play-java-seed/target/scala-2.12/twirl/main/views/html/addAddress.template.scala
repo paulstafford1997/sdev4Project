@@ -41,19 +41,18 @@ Seq[Any](format.raw/*1.61*/("""
         """),_display_(/*9.10*/inputText(addressForm("houseNum"), '_label -> "House/Appartment Number", 'class -> "form_control")),format.raw/*9.108*/("""
         """),_display_(/*10.10*/inputText(addressForm("street"), '_label -> "Street Name", 'class -> "form_control")),format.raw/*10.94*/("""
         """),_display_(/*11.10*/inputText(addressForm("town"), '_label -> "Town", 'class -> "form_control")),format.raw/*11.85*/("""
-        """),_display_(/*12.10*/inputText(addressForm("city"), '_label -> "City", 'class -> "form_control")),format.raw/*12.85*/("""
-        """),_display_(/*13.10*/inputText(addressForm("province"), '_label -> "Province", 'class -> "form_control")),format.raw/*13.93*/("""
-        """),_display_(/*14.10*/inputText(addressForm("postcode"), '_label -> "Postcode", 'class -> "form_control")),format.raw/*14.93*/("""
+        """),_display_(/*12.10*/inputText(addressForm("province"), '_label -> "Province", 'class -> "form_control")),format.raw/*12.93*/("""
+        """),_display_(/*13.10*/inputText(addressForm("postcode"), '_label -> "Postcode", 'class -> "form_control")),format.raw/*13.93*/("""
 
-        """),_display_(/*16.10*/inputText(addressForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*16.74*/("""
+        """),_display_(/*15.10*/inputText(addressForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*15.74*/("""
 
-        """),format.raw/*18.9*/("""<div class="actions">
+        """),format.raw/*17.9*/("""<div class="actions">
             <input type="submit" value="Add/Update Address" class="btn btn-primary">
-            <a href=""""),_display_(/*20.23*/routes/*20.29*/.HomeController.address),format.raw/*20.52*/("""">
+            <a href=""""),_display_(/*19.23*/routes/*19.29*/.HomeController.address),format.raw/*19.52*/("""">
                 <button type="button" class="btn btn-warning">Cancel</button>
             </a>
         </div>
-        """)))}),format.raw/*24.10*/("""
+        """)))}),format.raw/*23.10*/("""
 """)))}))
       }
     }
@@ -70,11 +69,11 @@ Seq[Any](format.raw/*1.61*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 11 13:28:51 GMT 2018
+                  DATE: Sun Mar 11 16:08:18 GMT 2018
                   SOURCE: /home/paul/sdev4Project/sdev4Project/play-java-seed/app/views/addAddress.scala.html
-                  HASH: 1ccd0531bb71557af5685ce93ef984888b1e3f39
-                  MATRIX: 985->1|1117->62|1162->60|1189->78|1216->80|1248->104|1287->106|1318->111|1386->154|1493->252|1533->254|1569->264|1581->268|1611->278|1648->289|1767->387|1804->397|1909->481|1946->491|2042->566|2079->576|2175->651|2212->661|2316->744|2353->754|2457->837|2495->848|2580->912|2617->922|2773->1051|2788->1057|2832->1080|2985->1202
-                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|38->6|38->6|39->7|39->7|39->7|41->9|41->9|42->10|42->10|43->11|43->11|44->12|44->12|45->13|45->13|46->14|46->14|48->16|48->16|50->18|52->20|52->20|52->20|56->24
+                  HASH: 03770dde3e075b8dd2110bc3b740727e6f59a261
+                  MATRIX: 985->1|1117->62|1162->60|1189->78|1216->80|1248->104|1287->106|1318->111|1386->154|1493->252|1533->254|1569->264|1581->268|1611->278|1648->289|1767->387|1804->397|1909->481|1946->491|2042->566|2079->576|2183->659|2220->669|2324->752|2362->763|2447->827|2484->837|2640->966|2655->972|2699->995|2852->1117
+                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|38->6|38->6|39->7|39->7|39->7|41->9|41->9|42->10|42->10|43->11|43->11|44->12|44->12|45->13|45->13|47->15|47->15|49->17|51->19|51->19|51->19|55->23
                   -- GENERATED --
               */
           
