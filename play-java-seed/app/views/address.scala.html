@@ -1,0 +1,58 @@
+@(address: List[models.Address], user: models.users.User)
+
+@main("Address",user) {
+
+<p class="lead">Addresses</p>
+
+@if(flash.containsKey("success")) {
+  <div class="alert alert-success">
+    @flash.get("success")
+  </div>
+}
+
+<table class="table table-bordered table-hover table-condensed">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>House/Apartment Number</th>
+      <th>Street</th>
+      <th>Town</th>
+      <th>Province</th>
+      <th>Postcode</th>
+      <th colspan="2"></th>      
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(a<-address) {
+      <tr>
+        <td class="numeric">@a.getId</td>
+        <td>@a.getHouseNum</td>
+        <td>@a.getStreet</td>
+        <td>@a.getTown</td>
+        <td>@a.getProvince</td>
+        <td>@a.getPostcode</td>
+        
+        <td>
+          <a href="@routes.HomeController.updateAddress(a.getId)" class="button-xs btn-danger">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+        </td>  
+        <td>
+          <a href="@routes.HomeController.deleteAddress(a.getId)" class="button-xs btn-danger"  onclick="return confirmDel()">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </td>
+      </tr>
+    }
+  </tbody>
+
+</table>
+<p>
+  <a href="@routes.HomeController.addAddress()">
+    <button class="btn btn-primary">Add an Address</button>
+  </a>
+</p>
+
+}
