@@ -24,7 +24,7 @@ import views.html.*;
 
 /**
  * X00136814 Paul Stafford
- * 
+ * X00139679 Conor Dillon
  * 
  */
 public class HomeController extends Controller {
