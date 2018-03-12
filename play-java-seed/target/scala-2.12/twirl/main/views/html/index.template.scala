@@ -34,20 +34,20 @@ Seq[Any](format.raw/*1.119*/("""
 
 """),_display_(/*3.2*/main("Projects",user)/*3.23*/ {_display_(Seq[Any](format.raw/*3.25*/("""
 
-"""),format.raw/*5.1*/("""<div class="row">
+  """),format.raw/*5.3*/("""<p class="lead">Projects</p>
+
+<div class="row">
     <div class="col-sm-10">
         <table class="table table-bordered table-hover table-condensed">
-          """),_display_(/*8.12*/if(flash.containsKey("success"))/*8.44*/ {_display_(Seq[Any](format.raw/*8.46*/("""
-            """),format.raw/*9.13*/("""<div class="alert alert-success">
-              """),_display_(/*10.16*/flash/*10.21*/.get("success")),format.raw/*10.36*/("""
-            """),format.raw/*11.13*/("""</div>
-          """)))}),format.raw/*12.12*/("""
-          """),format.raw/*13.11*/("""<thead>
+          """),_display_(/*10.12*/if(flash.containsKey("success"))/*10.44*/ {_display_(Seq[Any](format.raw/*10.46*/("""
+            """),format.raw/*11.13*/("""<div class="alert alert-success">
+              """),_display_(/*12.16*/flash/*12.21*/.get("success")),format.raw/*12.36*/("""
+            """),format.raw/*13.13*/("""</div>
+          """)))}),format.raw/*14.12*/("""
+          """),format.raw/*15.11*/("""<thead>
             <tr>
               <th>ID</th>
-              <th>Employee</th>
               <th>Name</th>
-              <th>No. Of Members</th>
               <th colspan="2"></th>      
             </tr>
           </thead>
@@ -55,41 +55,34 @@ Seq[Any](format.raw/*1.119*/("""
           <tbody>
             """),_display_(/*24.14*/for(p<-projects) yield /*24.30*/ {_display_(Seq[Any](format.raw/*24.32*/("""
               """),format.raw/*25.15*/("""<tr>
-                <td>"""),_display_(/*26.22*/p/*26.23*/.getEmployee),format.raw/*26.35*/("""</td>
-                  """),_display_(/*27.20*/if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined)/*27.108*/ {_display_(Seq[Any](format.raw/*27.110*/("""
-                    """),format.raw/*28.21*/("""<td><img src="/assets/images/productImages/thumbnails/"""),_display_(/*28.76*/(p.getId + ".jpg")),format.raw/*28.94*/(""""/></td>
-                """)))}/*29.19*/else/*29.24*/{_display_(Seq[Any](format.raw/*29.25*/("""
-                    """),format.raw/*30.21*/("""<td><img src="/assets/images/productImages/thumbnails/noImage.jpg"/></td>
-                """)))}),format.raw/*31.18*/("""
-                """),format.raw/*32.17*/("""<td class="numeric">"""),_display_(/*32.38*/p/*32.39*/.getId),format.raw/*32.45*/("""</td>
-                <td><a href=""""),_display_(/*33.31*/routes/*33.37*/.HomeController.projectDetails(p.getId)),format.raw/*33.76*/("""">
-                    """),_display_(/*34.22*/p/*34.23*/.getName),format.raw/*34.31*/("""</td>
+                <td class="numeric">"""),_display_(/*26.38*/p/*26.39*/.getId),format.raw/*26.45*/("""</td>
+                <td><a href=""""),_display_(/*27.31*/routes/*27.37*/.HomeController.projectDetails(p.getId)),format.raw/*27.76*/("""">
+                    """),_display_(/*28.22*/p/*28.23*/.getName),format.raw/*28.31*/("""</td>
                    </a>
-                <td>"""),_display_(/*36.22*/p/*36.23*/.getEmployee),format.raw/*36.35*/("""</td>
                 <td>
-                  <a href=""""),_display_(/*38.29*/routes/*38.35*/.HomeController.updateProject(p.getId)),format.raw/*38.73*/("""" class="button xs btn-danger">
+                  <a href=""""),_display_(/*31.29*/routes/*31.35*/.HomeController.updateProject(p.getId)),format.raw/*31.73*/("""" class="button xs btn-danger">
                     <span class="glyphicon glyphicon-pencil"></span>
                   </a>
                 </td>        <td>
-                  <a href=""""),_display_(/*42.29*/routes/*42.35*/.HomeController.deleteProject(p.getId)),format.raw/*42.73*/("""" class="button xs btn-danger" onclick="return confirmDel();">
+                  <a href=""""),_display_(/*35.29*/routes/*35.35*/.HomeController.deleteProject(p.getId)),format.raw/*35.73*/("""" class="button xs btn-danger" onclick="return confirmDel();">
                     <span class="glyphicon glyphicon-trash"></span>
                   </a>
                 </td>
               </tr>
-            """)))}),format.raw/*47.14*/("""
-          """),format.raw/*48.11*/("""</tbody>
+            """)))}),format.raw/*40.14*/("""
+          """),format.raw/*41.11*/("""</tbody>
     
         </table>
     
         <p>
-          <a href=""""),_display_(/*53.21*/routes/*53.27*/.HomeController.addProject()),format.raw/*53.55*/("""">
+          <a href=""""),_display_(/*46.21*/routes/*46.27*/.HomeController.addProject()),format.raw/*46.55*/("""">
             <button class="btn btn-primary">Add a project</button>
           </a>
         </p>
       </div>
     </div>
 
-""")))}),format.raw/*60.2*/("""
+""")))}),format.raw/*53.2*/("""
 """))
       }
     }
@@ -106,11 +99,11 @@ Seq[Any](format.raw/*1.119*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 11 20:23:32 GMT 2018
+                  DATE: Mon Mar 12 00:54:06 GMT 2018
                   SOURCE: /home/paul/sdev4Project/sdev4Project/play-java-seed/app/views/index.scala.html
-                  HASH: c35252b55f9b10bc9e3cb45fc22118accbb6a70d
-                  MATRIX: 1023->1|1236->118|1264->121|1293->142|1332->144|1360->146|1516->276|1556->308|1595->310|1635->323|1711->372|1725->377|1761->392|1802->405|1851->423|1890->434|2181->698|2213->714|2253->716|2296->731|2349->757|2359->758|2392->770|2444->795|2542->883|2583->885|2632->906|2714->961|2753->979|2798->1006|2811->1011|2850->1012|2899->1033|3021->1124|3066->1141|3114->1162|3124->1163|3151->1169|3214->1205|3229->1211|3289->1250|3340->1274|3350->1275|3379->1283|3457->1334|3467->1335|3500->1347|3582->1402|3597->1408|3656->1446|3869->1632|3884->1638|3943->1676|4183->1885|4222->1896|4317->1964|4332->1970|4381->1998|4535->2122
-                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|40->8|40->8|40->8|41->9|42->10|42->10|42->10|43->11|44->12|45->13|56->24|56->24|56->24|57->25|58->26|58->26|58->26|59->27|59->27|59->27|60->28|60->28|60->28|61->29|61->29|61->29|62->30|63->31|64->32|64->32|64->32|64->32|65->33|65->33|65->33|66->34|66->34|66->34|68->36|68->36|68->36|70->38|70->38|70->38|74->42|74->42|74->42|79->47|80->48|85->53|85->53|85->53|92->60
+                  HASH: 87e1bdba09ca1bc7d309ddcfbbdc806909e425e4
+                  MATRIX: 1023->1|1236->118|1264->121|1293->142|1332->144|1362->148|1549->308|1590->340|1630->342|1671->355|1747->404|1761->409|1797->424|1838->437|1887->455|1926->466|2147->660|2179->676|2219->678|2262->693|2331->735|2341->736|2368->742|2431->778|2446->784|2506->823|2557->847|2567->848|2596->856|2702->935|2717->941|2776->979|2989->1165|3004->1171|3063->1209|3303->1418|3342->1429|3437->1497|3452->1503|3501->1531|3655->1655
+                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|42->10|42->10|42->10|43->11|44->12|44->12|44->12|45->13|46->14|47->15|56->24|56->24|56->24|57->25|58->26|58->26|58->26|59->27|59->27|59->27|60->28|60->28|60->28|63->31|63->31|63->31|67->35|67->35|67->35|72->40|73->41|78->46|78->46|78->46|85->53
                   -- GENERATED --
               */
           

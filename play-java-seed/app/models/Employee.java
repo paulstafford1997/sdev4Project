@@ -68,14 +68,4 @@ public class Employee extends Model {
         return Employee.find.query().where().orderBy("name asc").findList();
     }
 
-    public static Map<String, String> options() {
-        LinkedHashMap<String, String> options = new LinkedHashMap();
-
-        for (Employee e: Employee.findAll()) {
-            options.put(e.getId().toString(), e.getName());
-        }
-        
-        return options;
-    }
-
 }

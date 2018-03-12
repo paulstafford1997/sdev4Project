@@ -6,19 +6,25 @@
 GET     /                           controllers.HomeController.index(cat:Long?=0L)
 GET     /address                    controllers.HomeController.address
 GET     /department                 controllers.HomeController.department
+GET     /employee                   controllers.HomeController.employee
 GET     /addProject                 controllers.HomeController.addProject
-POST    /addProductSubmit           controllers.HomeController.addProjectSubmit
+GET     /addEmployee                controllers.HomeController.addEmployee
+POST    /addProjectSubmit           controllers.HomeController.addProjectSubmit
+GET     /addEmployeeSubmit          controllers.HomeController.addEmployeeSubmit
 GET     /addAddress                 controllers.HomeController.addAddress
 POST    /addAddressSubmit           controllers.HomeController.addAddressSubmit
 GET     /addDepartment              controllers.HomeController.addDepartment
 POST    /addDepartmentSubmit        controllers.HomeController.addDepartmentSubmit
 GET     /delProject/:id             controllers.HomeController.deleteProject(id: Long)
+GET     /delEmployee/:id            controllers.HomeController.deleteEmployee(id: Long)
 GET     /delAddress/:id             controllers.HomeController.deleteAddress(id: Long)
 GET     /delDepartment/:id          controllers.HomeController.deleteDepartment(id: Long)
 GET     /updateProject/:id          controllers.HomeController.updateProject(id: Long)
+GET     /updateEmployee/:id         controllers.HomeController.updateEmployee(id: Long)
 GET     /updateDepartment/:id       controllers.HomeController.updateDepartment(id: Long)
 GET     /updateAddress/:id          controllers.HomeController.updateAddress(id: Long)
 POST    /updateProjectSubmit/:id    controllers.HomeController.updateProjectSubmit(id: Long)
+POST    /updateEmployeeSubmit/:id   controllers.HomeController.updateEmployeeSubmit(id: Long)
 POST    /updateAddressSubmit/:id    controllers.HomeController.updateAddressSubmit(id: Long)
 POST    /updateDepartmentSubmit/:id controllers.HomeController.updateDepartmentSubmit(id: Long)
 

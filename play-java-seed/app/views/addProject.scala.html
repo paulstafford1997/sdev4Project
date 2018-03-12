@@ -11,17 +11,9 @@
         @CSRF.formField
 
         @inputText(projectForm("name"), '_label -> "Name", 'class -> "form-control")
-        @select(
-            projectForm("employee.id"),
-            options(Employee.options),
-            '_label -> "Employee", '_default -> "-- Choose a employee --",
-            '_showConstraints -> false, 'class -> "form-control"
-        )
 
         @inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")
         
-        <label>Image Upload</label>
-        <input class="btn-sm btn-default" type="file" name="upload">
         <br><br>
         <div class="actions">
             <input type="submit" value="Add Project" class="btn btn-primary">

@@ -2,6 +2,8 @@
 
 @main("Projects",user) {
 
+  <p class="lead">Projects</p>
+
 <div class="row">
     <div class="col-sm-10">
         <table class="table table-bordered table-hover table-condensed">
@@ -13,9 +15,7 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Employee</th>
               <th>Name</th>
-              <th>No. Of Members</th>
               <th colspan="2"></th>      
             </tr>
           </thead>
@@ -23,17 +23,10 @@
           <tbody>
             @for(p<-projects) {
               <tr>
-                <td>@p.getEmployee</td>
-                  @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
-                    <td><img src="/assets/images/productImages/thumbnails/@(p.getId + ".jpg")"/></td>
-                } else {
-                    <td><img src="/assets/images/productImages/thumbnails/noImage.jpg"/></td>
-                }
                 <td class="numeric">@p.getId</td>
                 <td><a href="@routes.HomeController.projectDetails(p.getId)">
                     @p.getName</td>
                    </a>
-                <td>@p.getEmployee</td>
                 <td>
                   <a href="@routes.HomeController.updateProject(p.getId)" class="button xs btn-danger">
                     <span class="glyphicon glyphicon-pencil"></span>

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paul/sdev4Project/sdev4Project/play-java-seed/conf/routes
-// @DATE:Sun Mar 11 21:32:37 GMT 2018
+// @DATE:Mon Mar 12 00:05:59 GMT 2018
 
 
 package router {

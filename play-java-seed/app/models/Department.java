@@ -48,4 +48,14 @@ public class Department extends Model{
         this.name = name;
     }
 
+    public static Map<String, String> options() {
+        LinkedHashMap<String, String> options = new LinkedHashMap();
+
+        for (Department dep: Department.findAll()) {
+            options.put(dep.getId().toString(), dep.getName());
+        }
+        
+        return options;
+    }
+
 }

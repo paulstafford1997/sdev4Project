@@ -43,25 +43,17 @@ Seq[Any](format.raw/*1.62*/("""
         """),_display_(/*11.10*/CSRF/*11.14*/.formField),format.raw/*11.24*/("""
 
         """),_display_(/*13.10*/inputText(projectForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*13.85*/("""
-        """),_display_(/*14.10*/select(
-            projectForm("employee.id"),
-            options(Employee.options),
-            '_label -> "Employee", '_default -> "-- Choose a employee --",
-            '_showConstraints -> false, 'class -> "form-control"
-        )),format.raw/*19.10*/("""
 
-        """),_display_(/*21.10*/inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*21.74*/("""
+        """),_display_(/*15.10*/inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*15.74*/("""
         
-        """),format.raw/*23.9*/("""<label>Image Upload</label>
-        <input class="btn-sm btn-default" type="file" name="upload">
-        <br><br>
+        """),format.raw/*17.9*/("""<br><br>
         <div class="actions">
             <input type="submit" value="Add Project" class="btn btn-primary">
-            <a href=""""),_display_(/*28.23*/routes/*28.29*/.HomeController.index(0)),format.raw/*28.53*/("""">
+            <a href=""""),_display_(/*20.23*/routes/*20.29*/.HomeController.index(0)),format.raw/*20.53*/("""">
                 <button type="button" class="btn btn-warning">Cancel</button>
             </a>
         </div>
-    """)))}),format.raw/*32.6*/("""
+    """)))}),format.raw/*24.6*/("""
 """)))}))
       }
     }
@@ -78,11 +70,11 @@ Seq[Any](format.raw/*1.62*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 11 20:23:32 GMT 2018
+                  DATE: Mon Mar 12 00:58:55 GMT 2018
                   SOURCE: /home/paul/sdev4Project/sdev4Project/play-java-seed/app/views/addProject.scala.html
-                  HASH: 7613d161f2f2a538a1540676cd2699242f6d0bdd
-                  MATRIX: 985->1|1118->63|1163->61|1190->79|1217->81|1249->105|1288->107|1319->112|1387->155|1543->303|1582->305|1619->342|1656->352|1669->356|1700->366|1738->377|1834->452|1871->462|2128->698|2166->709|2251->773|2296->791|2567->1035|2582->1041|2627->1065|2775->1183
-                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|41->9|41->9|42->10|43->11|43->11|43->11|45->13|45->13|46->14|51->19|53->21|53->21|55->23|60->28|60->28|60->28|64->32
+                  HASH: d54677ea304804db3e1d64421b18f067755bfc74
+                  MATRIX: 985->1|1118->63|1163->61|1190->79|1217->81|1249->105|1288->107|1319->112|1387->155|1543->303|1582->305|1619->342|1656->352|1669->356|1700->366|1738->377|1834->452|1872->463|1957->527|2002->545|2168->684|2183->690|2228->714|2376->832
+                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|41->9|41->9|42->10|43->11|43->11|43->11|45->13|45->13|47->15|47->15|49->17|52->20|52->20|52->20|56->24
                   -- GENERATED --
               */
           
